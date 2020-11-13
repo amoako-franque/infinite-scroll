@@ -5,7 +5,7 @@ let photosArray = []
 
 //unsplash api calls
 let count = 10
-const apiKey = "Place your apiKey here"
+const apiKey = config.apiKey
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`
 
 //Helper Function to Set Attributes on DOM Elements
@@ -53,10 +53,10 @@ async function getPhotos() {
 // Check to see if scrolling near bottom of page, Load More Photos
 window.addEventListener('scroll', () => {
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000) {
-    //getPhotos()
+    getPhotos()
     console.log('load more')
   }
 })
 
 // onload
-//getPhotos()
+getPhotos()
